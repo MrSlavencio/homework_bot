@@ -166,6 +166,8 @@ def main():
     current_timestamp = int(time.time())
     first_status: int = 0
 
+    send_message(bot, 'Бот запущен')
+
     while True:
         try:
             response = get_api_answer(current_timestamp)
