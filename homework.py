@@ -25,6 +25,9 @@ HOMEWORK_STATUSES = {
 }
 
 
+SENT_MSGS_LOGS = []
+
+
 class TokenNotExist(Exception):
     """Исключение для отсутствующих переменных виртуального окружения."""
 
@@ -61,14 +64,9 @@ def send_message(bot, message):
 def send_error_msg(bot, message):
     """Отправка ботом сообщений об ошибке."""
     try:
-        with open(LOGS_FILENAME) as fd:
-            logs = fd.readlines()
-        is_message = False
-        for log in logs:
-            if f'[INFO] Бот отправил сообщение: {message}' in log:
-                is_message = True
-        if is_message is False:
+        if message not in SENT_MSGS_LOGS:
             send_message(bot, message)
+            SENT_MSGS_LOGS.append(message)
     except Exception as error:
         logging.error(error)
 
