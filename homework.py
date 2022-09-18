@@ -14,7 +14,7 @@ PRACTICUM_TOKEN = os.getenv('PRACTICUM_TOKEN')
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
-RETRY_TIME = 6000000
+RETRY_TIME = 600
 ENDPOINT = 'https://practicum.yandex.ru/api/user_api/homework_statuses/'
 HEADERS = {'Authorization': f'OAuth {PRACTICUM_TOKEN}'}
 
@@ -23,8 +23,6 @@ HOMEWORK_STATUSES = {
     'reviewing': 'Работа взята на проверку ревьюером.',
     'rejected': 'Работа проверена: у ревьюера есть замечания.'
 }
-
-LOGS_FILENAME = 'homework.log'
 
 
 class TokenNotExist(Exception):
@@ -185,9 +183,7 @@ def main():
 if __name__ == '__main__':
     logging.basicConfig(
         format='%(asctime)s [%(levelname)s] %(message)s',
-        level=logging.DEBUG,
-        filename=LOGS_FILENAME,
-        filemode='w')
+        level=logging.DEBUG)
     logging.StreamHandler(sys.stdout)
     logging.info('Бот запущен')
     main()
