@@ -13,14 +13,11 @@
 
 Бот размещен и работает на сервере [Heroku](https://www.heroku.com/): homework-check-bot-mrslavencio
 
-Системные требования
-Python 3.7+
-Works on Linux, Windows, macOS
-Используемые технологии:
-Python 3.7+
-Pytest
-Telegram Bot API
-Requests
+## Используемые технологии:
+* Pytest
+* Telegram Bot API
+* Requests
+
 Запуск проекта:
 Клонировать репозиторий и перейти в него в командной строке:
 
