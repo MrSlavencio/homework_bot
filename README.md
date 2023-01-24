@@ -18,27 +18,35 @@
 * Telegram Bot API
 * Requests
 
-Запуск проекта:
+## Как развернуть проект
 Клонировать репозиторий и перейти в него в командной строке:
-
-git clone https://github.com/Seniacat/telegram_bot.git
-cd telegram_bot
+```
+git clone https://github.com/MrSlavencio/homework_bot.git
+```
 Cоздать и активировать виртуальное окружение:
-
-python3 -m venv env
-source env/bin/activate (Mac OS, Linux) или source venv/Scripts/activate (Win10)
+```
+python -m venv venv
+```
+```
+cd venv
+```
+```
+cd Scripts
+```
+```
+activate
+```
+Обновляем менеджер пакетов pip
+```
+python -m pip install --upgrade pip
+```
 Установить зависимости из файла requirements.txt:
-
-python3 -m pip install --upgrade pip
+```
 pip install -r requirements.txt
-Создать файл виртуального окружения .env в корневой директории проекта:
-
-touch .env
-В нём указать свои ключи для окен API сервиса Практикум.Домашка и Telegram:
-
-- PRAKTIKUM_TOKEN =
-- TELEGRAM_TOKEN =
-- TELEGRAM_CHAT_ID =
-Запустить проект на локальной машине:
-
-python homework.py
+```
+Создать файл .env и добавить переменные виртуального окружения:
+```
+PRACTICUM_TOKEN = '<токен от сервиса Практикум.Домашка>'
+TELEGRAM_TOKEN = '<токен телеграм-бота>'
+TELEGRAM_CHAT_ID = '<id пользователя, кому будут приходить уведомления>'
+```
